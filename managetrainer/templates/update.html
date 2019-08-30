@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register Trainer</title>
+</head>
+<body>
+
+<h1>Welcome to Update Page</h1>
+
+<form action="" method="post">
+
+    {% csrf_token %}
+
+{% comment %}
+    Emp Id:<input type="text" name="emp_id" placeholder="Enter the Employee Id"><br>
+    Emp Name:<input type="text" name="emp_name" placeholder="Enter the Employee Name"><br>
+    <input type="radio" name="gender" value="male">Male
+    <input type="radio" name="gender" value="female">Female
+    <input type="radio" name="gender" value="not specified">Not Specified<br>
+    Salary<input type="text" name="salary" placeholder="Enter the salary"><br>
+    DOJ<input type="date" name="doj" placeholder="Enter the Date of Joining"><br>
+    <input type="submit" value="register">
+{% endcomment %}
+
+    {% for field in form %}
+        {{ field.err }}{{ field.label_tag }} {{ field }}<br>
+    {% endfor %}
+    <input type="submit" value="register">
+</form>
+
+</body>
+</html>

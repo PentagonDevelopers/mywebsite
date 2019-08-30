@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Info of the Trainer</title>
+</head>
+<body>
+<img src="{{ trainer.profile_pic.url }}">
+<h1>Welcome {{ trainer.emp_name }}</h1>
+<h1>Trainer ID --> {{ trainer.emp_id }}</h1>
+
+<h2>Salary of the Trainer {{ trainer.salary }}</h2>
+<h2>Gender {{ trainer.gender }}</h2>
+<h2>Date of Joining {{ trainer.doj }}</h2>
+
+{#{% if trainer.batches_set.all %}#}
+{##}
+{#    <form action="{% url 'managetrainer:change' trainer.emp_id %}" method="get" method="post">#}
+{##}
+{#        {% csrf_token %}#}
+{##}
+{#        <table border="1">#}
+{##}
+{#            <tr>#}
+{#                <th>Trainer Id</th>#}
+{#                <th>Batch Code</th>#}
+{#                <th>Batch Name</th>#}
+{#                <th>Status</th>#}
+{#                <th>Close batch</th>#}
+{#                <th>Open batch</th>#}
+{#            </tr>#}
+{##}
+{#            {% for batch in trainer.batches_set.all %}#}
+{##}
+{#                <tr>#}
+{#                    <td>{{ batch.trainer.emp_id }}</td>#}
+{#                    <td>{{ batch.batch_code }}</td>#}
+{#                    <td>{{ batch.batch_name }}</td>#}
+{#                    {% if batch.status %}#}
+{#                        <td>Closed</td>#}
+{#                        {% else %}#}
+{#                            <td>Running</td>#}
+{#                    {% endif %}#}
+{#                    <td>#}
+{##}
+{#                        <input type="radio" name="change_status" value="{{ batch.batch_code }}">#}
+{##}
+{#                    </td>#}
+{#                </tr>#}
+{##}
+{#            {% endfor %}#}
+{##}
+{#                        <input type="submit" value="Change Status">#}
+{#        </table>#}
+{#    </form>#}
+{#        {% if msg %}#}
+{#            <strong><h3>{{ msg }}</h3></strong>#}
+{#        {% endif %}#}
+{##}
+{#    {% else %}#}
+{#        <h2>No batches assigned to {{ trainer.emp_name }}</h2>#}
+{#{% endif %}#}
+
+</body>
+</html>
